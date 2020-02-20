@@ -122,14 +122,13 @@ function renderZnav(){
 
 //tnav
 function renderTnav(){
-  const option = (template,name) => el('option',[`value="${template}"`],name);
+const option = (template,name) => el('option',[`value="${template}"`],name);
   var opt=config.search_engine.map((item) =>{
     return option(item.template,item.name);
   }).join("");
   var input=el('input',['class="bg-light form-control border-0 small"','id="searchinput"','type="text"','placeholder="Search for ..."'],'');
   var sbtn=el('div',['class="input-group-append"'],el('button',['class="btn btn-primary py-0"','id="sbtn"','type="button"'],el('i',['class="fas fa-search"'],'')));
   return el('nav',['class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top fixed-top leftnav1"','id="leftnav"'],el('div',['class="container-fluid"'],el('form',['class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"'],el('div',['class="input-group"'],el('select',['class="form-inline border-0 w-25"','id="searchsel"'],opt)+input+sbtn))));
-
 }
 
 //main
@@ -137,17 +136,17 @@ function renderMain(){
   var main=config.lists.map((item)=> {
     const card=(url,name,desc)=>el('div',['class="col-md-5 col-xl-2 mb-2"'],el('a',[`href="${url}"`,'target="_blank"','data-toggle="tooltip"',`title="网站名：${name} 描述：${desc}"`],el('div',['class="card border-left-primary py-1"'],el('div',['class="card-body no-gutters textdark"'],el('div',['class="row no-gutters"'],el('div',['class="col-auto w-25"'],el('img',['class="media-left img-fluid"','style="width:45px;height:45px;"',`src="${getFavicon(url)}"`],''))+el('div',['class="col mr-1 ml-1"'],el('div',['class="font-weight-bold mb-0 ooh"'],el('span',[''],name))+el('div',['class="mb-0 ds doh"'],el('span',[''],desc))))))));
     const sort=el('div',['class="d-sm-flex justify-content-between align-items-center mb-2"'],el('h5',['class="text-dark mb-0"',`id="${item.name}"`],item.name));
-    var content=el('div',['class="row"'],item.list.map((link=>{
+    var content = el('div',['class="row"'],item.list.map((link) =>{
       return card(link.url,link.name,link.desc);
-    })).join(""));
-    var m=sort.concat(content);
-    return m;
-    });
+    }).join(""));
+    return el('div',[''],sort+ content);
+    }).join("");
     return el('div',['class="container-fluid zbody1 hline"','id="zbody"'],main);
 }
 
 /*通过分析链接 实时获取favicon
 * @url 需要分析的Url地址
+*虚空大佬的api
 */
 function getFavicon(url){
   if(url.match(/https{0,1}:\/\//)){
@@ -166,8 +165,8 @@ function renderHTML(znav,tnav,index,footer) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>${config.title} - ${config.subtitle}</title>
-    <link rel="stylesheet" href="https://rawcdn.githack.com/ytorpedol/navigation-html/4392253a65eaa9333a4d300b0d0c64cc5ba56a17/assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://rawcdn.githack.com/ytorpedol/navigation-html/4392253a65eaa9333a4d300b0d0c64cc5ba56a17/assets/css/styles.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ytorpedol/navigation-html@1.0/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ytorpedol/navigation-html@1.0/assets/css/styles.min.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.7.1/css/all.css">
   </head>
   <body id="page-top">
@@ -187,7 +186,7 @@ function renderHTML(znav,tnav,index,footer) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
-    <script src="https://rawcdn.githack.com/ytorpedol/navigation-html/4ba81aab4354a88a7d2dd9a5c28d230ed39da1b1/assets/js/script.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ytorpedol/navigation-html@1.0/assets/js/script.min.js"></script>
     <script>
     var clickn=1;
     $(document).ready(function(){
