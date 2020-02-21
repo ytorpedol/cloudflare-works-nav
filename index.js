@@ -23,7 +23,6 @@ const config = {
    lists: [                            //Url list
     {
       name:"技术",
-      icon:"code",
       list:[
         {
           url:"https://oschina.net/",
@@ -59,7 +58,6 @@ const config = {
     },
     {
       name:"学习",
-      icon:"graduation cap",
       list:[
         {
           url:"https://w3school.com.cn/",
