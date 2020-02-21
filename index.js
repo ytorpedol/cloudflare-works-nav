@@ -134,7 +134,7 @@ const option = (template,name) => el('option',[`value="${template}"`],name);
 //main
 function renderMain(){
   var main=config.lists.map((item)=> {
-    const card=(url,name,desc)=>el('div',['class="col-md-5 col-xl-2 mb-2"'],el('a',[`href="${url}"`,'target="_blank"','data-toggle="tooltip"',`title="网站名：${name} 描述：${desc}"`],el('div',['class="card border-left-primary py-1"'],el('div',['class="card-body no-gutters textdark"'],el('div',['class="row no-gutters"'],el('div',['class="col-auto w-25"'],el('img',['class="media-left img-fluid"','style="width:45px;height:45px;"',`src="${getFavicon(url)}"`],''))+el('div',['class="col mr-1 ml-1"'],el('div',['class="font-weight-bold mb-0 ooh"'],el('span',[''],name))+el('div',['class="mb-0 ds doh"'],el('span',[''],desc))))))));
+    const card=(url,name,desc)=>el('div',['class="col-md-5 col-xl-2 mb-2"'],el('a',[`href="${url}"`,'target="_blank"','data-toggle="tooltip"','data-html="true"',`title="网站名：${name}<br/>描述：${desc}"`],el('div',['class="card border-left-primary py-1"'],el('div',['class="card-body no-gutters textdark"'],el('div',['class="row no-gutters"'],el('div',['class="col-auto w-25"'],el('img',['class="media-left img-fluid"','style="width:45px;height:45px;"',`src="${getFavicon(url)}"`],''))+el('div',['class="col mr-1 ml-1"'],el('div',['class="font-weight-bold mb-0 ooh"'],el('span',[''],name))+el('div',['class="mb-0 ds doh"'],el('span',[''],desc))))))));
     const sort=el('div',['class="d-sm-flex justify-content-between align-items-center mb-2"'],el('h5',['class="text-dark mb-0"',`id="${item.name}"`],item.name));
     var content = el('div',['class="row"'],item.list.map((link) =>{
       return card(link.url,link.name,link.desc);
@@ -198,7 +198,6 @@ function renderHTML(znav,tnav,index,footer) {
         $("#zbody").removeClass("zbody1");
         $("#leftnav").addClass("leftnav2");
         $("#zbody").addClass("zbody2");
-        console.log(clickn);
         clickn=2;
         }
         else{
@@ -211,11 +210,8 @@ function renderHTML(znav,tnav,index,footer) {
     });
     $("#sbtn").on('click',function(e){
         var sel=$('#searchsel').val();
-        console.log(sel);
         var input=$('#searchinput').val();
-        console.log(input);
         var url = url = sel.replace(/\$s/,$('#searchinput').val());
-        console.log(url);
         window.open(url);
         });
     $("#searchinput").bind("keypress", function(){
