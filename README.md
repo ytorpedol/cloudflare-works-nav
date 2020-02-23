@@ -7,9 +7,9 @@
 ### [绑定域名教程](https://blog.csdn.net/qq_38243612/article/details/104433673)：https://blog.csdn.net/qq_38243612/article/details/104433673
 ### 系统配置：
 ```const config = {
-  title: "test导航",                 //网站标题
-  subtitle: "导航集合",              //网站描述
-  logo_icon: "fa fa-tachometer",    //图标
+  title: "网站标题",                 //网站标题
+  subtitle: "网站描述",              //网站描述
+  logo_icon: "https://",    //图标
   search_engine:[                   //搜索
     {
       name:"百 度",
