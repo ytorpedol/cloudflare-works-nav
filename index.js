@@ -1,6 +1,6 @@
 const config = {
-  title: "test导航",                 //网站标题
-  subtitle: "导航集合",              //网站描述
+  title: "网站标题",                 //网站标题
+  subtitle: "网站描述",              //网站描述
   logo_icon: "https://itku.ml/wp-content/uploads/2019/07/my.jpg",    //网站图标
   search_engine:[                   //搜索
     {
