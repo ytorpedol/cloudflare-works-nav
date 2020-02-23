@@ -1,7 +1,7 @@
 const config = {
   title: "test导航",                 //网站标题
   subtitle: "导航集合",              //网站描述
-  logo_icon: "fa fa-tachometer",    //图标
+  logo_icon: "https://itku.ml/wp-content/uploads/2019/07/my.jpg",    //图标
   search_engine:[                   //搜索
     {
       name:"百 度",
@@ -110,7 +110,7 @@ function renderFooter(){
 //znav
 function renderZnav(){
     const item=(name)=>el('li',['class="nav-item"','role="presentation"'],el('a',['class="nav-link active"',`href="#${name}"`],el('i',['class="fas fa-folder"'],'')+el('span',[''],name)));
-    var title=el('a',['class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"','href="#"'],el('div',['class="sidebar-brand-icon rotate-n-15"'],el('i',['class="fas fa-laugh-wink"'],''))+el('div',['class="sidebar-brand-text mx-3"'],el('span',[''],config.title)));
+    var title=el('a',['class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"','href="#"'],el('div',['class="sidebar-brand-icon"'],el('img',['class="image-responsive"',`src="${config.logo_icon}"`,'style="width:40px;height:40px;border-radius:50%;"'],''))+el('div',['class="sidebar-brand-text mx-3"'],el('span',[''],config.title)));
     var znav=config.lists.map((link) =>{
       return item(link.name);
     }).join("");
