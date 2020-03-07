@@ -1,8 +1,9 @@
 ##  利用cloudflare workers的免费套餐搭建个人导航站
 ### 导航站基于Bootstrap4，jquery设计
 ### CloudFlare Worker 是 CloudFlare 的边缘计算服务。免费套餐支持每天10万请求。
-
-### [演示地址](https://nav.elle.workers.dev/)：https://nav.elle.workers.dev/
+### [演示地址](https://nav.elle.workers.dev/)：https://nav.elle.workers.dev/   我的导航站
+### [演示地址](https://nav2.elle.workers.dev/)：https://nav2.elle.workers.dev/   2.0版本:在旧版本基础上增加背景图片，滚动条等功能，优化移动端响应
+### [演示地址](https://nav1.elle.workers.dev/)：https://nav1.elle.workers.dev/   1.0版本
 ### [搭建教程](https://blog.csdn.net/qq_38243612/article/details/104428591)：https://blog.csdn.net/qq_38243612/article/details/104428591
 ### [绑定域名教程](https://blog.csdn.net/qq_38243612/article/details/104433673)：https://blog.csdn.net/qq_38243612/article/details/104433673
 ### 系统配置：
